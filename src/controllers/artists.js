@@ -27,7 +27,8 @@ const createArtist = function(req, res){
   // modificar aqui
   const artist = new Artist({
     //...req.body.description
-    name: req.body.name
+    name: req.body.name,
+    createdBy: req.user._id
   })
   artist.save().then(function() {
     return res.send(artist)
